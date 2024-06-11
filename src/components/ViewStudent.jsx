@@ -6,7 +6,7 @@ import NavBar from './NavBar'
 const ViewStudent = () => {
     const [data, changeData] = useState([])
     const fetchdata = () => {
-      axios.get("https://friendsapi-re5a.onrender.com/view").then((response)=>{
+      axios.get("http://localhost:8080/view").then((response)=>{
         changeData(response.data)
         console.log(response.data)
       }).catch ((error)=>{
@@ -28,7 +28,7 @@ const ViewStudent = () => {
                                 <tr>
                                     <th scope="col"> NAME </th>
                                         <th scope="col">ADMISSION NO</th>
-                                        <th scope="col">ROLL NO.</th>
+                                       
                                         <th scope="col">DOB</th>
                                         <th scope="col">COURSE</th>
                                         <th scope="col">MOBILE</th>
@@ -45,7 +45,7 @@ const ViewStudent = () => {
                                         <tr>
                                             <th scope="row">{value.name}</th>
                                             <td>{value.admNo}</td>
-                                            <td>{value.rollNo}</td>
+                                           
                                             <td>{value.dob}</td>
                                             <td>{value.course}</td>
                                             <td>{value.mob}</td>

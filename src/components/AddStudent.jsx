@@ -5,14 +5,7 @@ import NavBar from './NavBar'
 
 const AddStudent = () => {
     const [data, setData] = useState({
-        name: "",
-        admNo: "",
-        rollNo: "",
-        dob: "",
-        course: "",
-        mob: "",
-        email: "",
-        address: ""
+       
     })
 
     const inputHandler = (event) => {
@@ -20,7 +13,7 @@ const AddStudent = () => {
     }
     const readValue = () => {
         console.log(data)
-        axios.post("https://courseapplogix.onrender.com/addstudents",data).then(
+        axios.post("http://localhost:8080/add",data).then(
             (Response)=>{
                 console.log(Response.data)
                 if (Response.data.status ==  "success") {
@@ -54,10 +47,7 @@ const AddStudent = () => {
                                 <label htmlFor="lname" className="form-label">ADMISSION NO</label>
                                 <input type="text" className="form-control" name='admNo' value={data.admNo} onChange={inputHandler} />
                             </div>
-                            <div className="col col-12 col-sm-6">
-                                <label htmlFor="college" className="form-label">ROLL NO</label>
-                                <input type="text" className="form-control" name='rollNo' value={data.college} onChange={inputHandler} />
-                            </div>
+                            
                             <div className="col col-12 col-sm-6">
                                 <label htmlFor="dob" className="form-label">DOB</label>
                                 <input type="date" className="form-control" name='dob' value={data.dob} onChange={inputHandler} />
